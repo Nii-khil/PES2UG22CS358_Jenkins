@@ -11,7 +11,8 @@ pipeline {
         stage('Build') {
             steps {
                 build 'PES2UG22CS358-1'
-                sh 'g++ main/hello.cpp -o output'
+                // introducing an error by using a non-existent file
+                sh 'g++ doesntExist.cpp -o output'
             }
         }
         stage('Test') {
